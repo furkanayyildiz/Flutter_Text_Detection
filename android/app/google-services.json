@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1093965716906",
+    "project_id": "text-recognition-app-2b296",
+    "storage_bucket": "text-recognition-app-2b296.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093965716906:android:91fef005102dd66fe85fd3",
+        "android_client_info": {
+          "package_name": "com.example.flutter_text_recognition"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7E373qGst4kLbNLDQYHNDN68TL7w7HT0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
