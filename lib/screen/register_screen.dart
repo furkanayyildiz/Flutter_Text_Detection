@@ -170,6 +170,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             color: Colors.white,
                           ),
                           child: TextField(
+                            obscureText: true,
                             controller: passwordController,
                             style: const TextStyle(color: Colors.indigo),
                             decoration: const InputDecoration(
