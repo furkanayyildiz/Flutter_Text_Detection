@@ -59,19 +59,20 @@ Install the project's dependencies by running the following commands in the term
    
 ##Screenshots
 
-![1](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/6d8733c1-add5-4083-93ed-3baaaf8e33c9)
+![1](https://github.com/furkanayyildiz/Calculator/assets/59210754/0002edfc-f0e7-4c69-810a-ffd4f7a17d84)
 
-![2](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/b9fc8993-cb2b-4bbb-8afc-216ca10cffa1)
+![2](https://github.com/furkanayyildiz/Calculator/assets/59210754/6aff8c7f-8ce8-4e00-b734-35408c31a4e3)
 
-![3](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/6f90a951-4b1f-49a5-98e1-fbb8f5296f1f)
+![3](https://github.com/furkanayyildiz/Calculator/assets/59210754/2b14b9d1-ccf2-4e7e-908c-f921069b9195)
 
-![4](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/634663eb-4f05-46aa-8820-a0f1f1fdfb64)
+![4](https://github.com/furkanayyildiz/Calculator/assets/59210754/ff9f5f50-d2cd-45e5-8d18-51a9f1118f1b)
 
-![5](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/b7238c51-94cf-4f8e-82ea-4037a4994066)
+![5](https://github.com/furkanayyildiz/Calculator/assets/59210754/9b378d77-182d-490f-aa9c-065074bb3a5f)
 
-![6](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/7be9a8f6-f825-4339-b768-cad1361571e8)
+![6](https://github.com/furkanayyildiz/Calculator/assets/59210754/b5629e3b-4883-4472-89cb-9d50c02c3b35)
 
-![7](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/4c4ef553-0438-435e-8030-a255562a6786)
+![7](https://github.com/furkanayyildiz/Calculator/assets/59210754/b8bb6b59-e456-4b2d-a4ef-74ce1436d4f0)
+
 
 
 
