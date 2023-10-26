@@ -56,6 +56,22 @@ Install the project's dependencies by running the following commands in the term
 4) Open the Project:
  To run project write this command
  - flutter run
+   
+##Screenshots
+
+![1](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/6d8733c1-add5-4083-93ed-3baaaf8e33c9)
+
+![2](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/b9fc8993-cb2b-4bbb-8afc-216ca10cffa1)
+
+![3](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/6f90a951-4b1f-49a5-98e1-fbb8f5296f1f)
+
+![4](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/634663eb-4f05-46aa-8820-a0f1f1fdfb64)
+
+![5](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/b7238c51-94cf-4f8e-82ea-4037a4994066)
+
+![6](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/7be9a8f6-f825-4339-b768-cad1361571e8)
+
+![7](https://github.com/furkanayyildiz/Flutter_Text_Detection/assets/59210754/4c4ef553-0438-435e-8030-a255562a6786)
 
 
 
