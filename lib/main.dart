@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_text_recognition/screen/home_screen.dart';
 import 'package:flutter_text_recognition/screen/login_screen.dart';
 import 'package:flutter_text_recognition/screen/register_screen.dart';
+import 'package:flutter_text_recognition/widget_tree.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home: const WidgetTree(),
     );
   }
 }

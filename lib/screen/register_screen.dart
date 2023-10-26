@@ -1,5 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_text_recognition/screen/login_screen.dart';
+
+import '../auth.dart';
+import '../core/User/user_model.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -9,6 +14,34 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  Future<void> createUserWithEmailAndPassword(
+    String name,
+    String email,
+    String phone,
+  ) async {
+    try {
+      var user = await Auth().createUserWithEmailAndPassword(
+        emailController.text,
+        passwordController.text,
+      );
+      final docUser =
+          FirebaseFirestore.instance.collection("Users").doc(user.uid);
+      final userModel = UserModel(
+          name: name, email: email, phone: phone, uId: user.uid, point: 50);
+      final toFirestoreUser = userModel.toFirestore();
+      await docUser.set(toFirestoreUser);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+      );
+    } on FirebaseAuthException catch (e) {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -51,8 +84,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             borderRadius: BorderRadius.circular(12),
                             color: Colors.white,
                           ),
-                          child: const TextField(
-                            style: TextStyle(color: Colors.white),
+                          child: TextField(
+                            controller: nameController,
+                            style: const TextStyle(color: Colors.indigo),
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               prefixIcon: Icon(
@@ -78,8 +112,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             borderRadius: BorderRadius.circular(12),
                             color: Colors.white,
                           ),
-                          child: const TextField(
-                            style: TextStyle(color: Colors.white),
+                          child: TextField(
+                            controller: phoneController,
+                            style: TextStyle(color: Colors.indigo),
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               prefixIcon: Icon(
@@ -105,8 +140,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             borderRadius: BorderRadius.circular(12),
                             color: Colors.white,
                           ),
-                          child: const TextField(
-                            style: TextStyle(color: Colors.white),
+                          child: TextField(
+                            controller: emailController,
+                            style: TextStyle(color: Colors.indigo),
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               prefixIcon: Icon(
@@ -133,9 +169,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             borderRadius: BorderRadius.circular(12),
                             color: Colors.white,
                           ),
-                          child: const TextField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
+                          child: TextField(
+                            controller: passwordController,
+                            style: const TextStyle(color: Colors.indigo),
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               prefixIcon: Icon(
                                 Icons.lock,
@@ -148,7 +185,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         const SizedBox(height: 35),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () async {
+                            await createUserWithEmailAndPassword(
+                              nameController.text,
+                              emailController.text,
+                              phoneController.text,
+                            );
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),

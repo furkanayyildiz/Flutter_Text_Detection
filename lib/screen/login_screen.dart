@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_text_recognition/screen/home_screen.dart';
 import 'package:flutter_text_recognition/screen/register_screen.dart';
+
+import '../auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -9,6 +13,19 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  Future<void> signInWithEmailAndPassword(String email, String password) async {
+    try {
+      await Auth().signInWithEmailAndPassword(email, password);
+
+      Navigator.pushReplacementNamed(context,
+          MaterialPageRoute(builder: (context) => HomeScreen()) as String);
+    } on FirebaseAuthException catch (e) {
+      print(e.message);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -51,9 +68,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(12),
                             color: Colors.white,
                           ),
-                          child: const TextField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
+                          child: TextField(
+                            controller: emailController,
+                            style: const TextStyle(color: Colors.indigo),
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               prefixIcon: Icon(
                                 Icons.email,
@@ -79,9 +97,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(12),
                             color: Colors.white,
                           ),
-                          child: const TextField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
+                          child: TextField(
+                            controller: passwordController,
+                            style: const TextStyle(color: Colors.indigo),
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               prefixIcon: Icon(
                                 Icons.lock,
@@ -94,7 +113,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 35),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () async {
+                            await signInWithEmailAndPassword(
+                                emailController.text, passwordController.text);
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
@@ -104,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: Padding(
                                 padding: EdgeInsets.all(10.0),
                                 child: Text(
-                                  ' Log In',
+                                  'Log In',
                                   style: TextStyle(
                                     color: Colors.indigo,
                                     fontSize: 25,
