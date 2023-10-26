@@ -23,6 +23,11 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const WidgetTree(),
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/register': (context) => const RegisterScreen(),
+        '/home': (context) => const HomeScreen(),
+      },
     );
   }
 }

@@ -7,7 +7,8 @@ import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart
 import 'package:permission_handler/permission_handler.dart';
 
 class TextScanner extends StatefulWidget {
-  const TextScanner({Key? key}) : super(key: key);
+  final int point;
+  const TextScanner({Key? key, required this.point}) : super(key: key);
 
   @override
   State<TextScanner> createState() => _TextScannerState();
@@ -168,7 +169,8 @@ class _TextScannerState extends State<TextScanner> with WidgetsBindingObserver {
       final recognizerText = await textRecognizer.processImage(inputImage);
       await navigator.push(
         MaterialPageRoute(
-          builder: (context) => ResultScreen(text: recognizerText.text),
+          builder: (context) =>
+              ResultScreen(text: recognizerText.text, point: widget.point),
         ),
       );
     } catch (e) {

@@ -1,10 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
+import '../auth.dart';
+import 'home_screen.dart';
+
 class ResultScreen extends StatefulWidget {
   final String text;
-  ResultScreen({Key? key, required this.text}) : super(key: key);
+  final int point;
+  ResultScreen({Key? key, required this.text, required this.point})
+      : super(key: key);
 
   @override
   State<ResultScreen> createState() => _ResultScreenState();
@@ -22,8 +28,13 @@ class _ResultScreenState extends State<ResultScreen> {
   }
 
   void aramaYap() {
+    var user = Auth().currentUser;
     for (String word in searchedTexts) {
       if (mainText.contains(word)) {
+        FirebaseFirestore.instance
+            .collection('Users')
+            .doc(user!.uid)
+            .update({'point': widget.point + 10});
         setState(() {
           resultText = "aranan kelimeler var";
           isFinded = true;
@@ -56,23 +67,20 @@ class _ResultScreenState extends State<ResultScreen> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
+              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   aramaYap();
                   isFinded
-                      ? getAlert(context, "pozitif", "kelime bulundu",
-                              AlertType.success)
+                      ? getAlert(context, "Congratulations",
+                              "You got 10 points", AlertType.success)
                           .show()
-                      : getAlert(context, "negatif", "kelime bulunamadi",
+                      : getAlert(context, "Sorry", "You got 0 points",
                               AlertType.error)
                           .show();
                 },
                 child: Text('Collect Points'),
               ),
-              SizedBox(height: 20),
-              Text("OR ",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              ElevatedButton(onPressed: () {}, child: Text('Recapture'))
             ],
           )),
     );
@@ -88,10 +96,11 @@ class _ResultScreenState extends State<ResultScreen> {
       buttons: [
         DialogButton(
           child: Text(
-            "COOL",
+            "OK",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen())),
           width: 120,
         )
       ],

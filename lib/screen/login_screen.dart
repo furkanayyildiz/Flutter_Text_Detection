@@ -19,8 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
     try {
       await Auth().signInWithEmailAndPassword(email, password);
 
-      Navigator.pushReplacementNamed(context,
-          MaterialPageRoute(builder: (context) => HomeScreen()) as String);
+      Navigator.pushReplacementNamed(context, '/home');
     } on FirebaseAuthException catch (e) {
       print(e.message);
     }
