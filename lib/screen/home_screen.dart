@@ -6,7 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_text_recognition/auth.dart';
 import 'package:flutter_text_recognition/core/product/product_data.dart';
-import 'package:flutter_text_recognition/text_scanner.dart';
+import 'package:flutter_text_recognition/widget/text_scanner.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../core/User/user_model.dart';
 
@@ -134,6 +135,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                       productData[index].point
                                 });
                                 setState(() {});
+                                Alert(
+                                  context: context,
+                                  type: AlertType.success,
+                                  title: "Congratulations",
+                                  desc: "You got the product",
+                                  buttons: [
+                                    DialogButton(
+                                      child: Text(
+                                        "OK",
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 20),
+                                      ),
+                                      onPressed: () => Navigator.pop(context),
+                                      width: 120,
+                                    )
+                                  ],
+                                ).show();
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
