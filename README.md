@@ -63,19 +63,21 @@ Install the project's dependencies by running the following commands in the term
 
 ![2](https://github.com/furkanayyildiz/Calculator/assets/59210754/6aff8c7f-8ce8-4e00-b734-35408c31a4e3)
 
-![home](https://github.com/furkanayyildiz/Ozay_Restaurant_App/assets/59210754/31e5f2a4-e681-4fc4-abfc-fecddb4d75bb)
+![home](https://github.com/furkanayyildiz/Ozay_Restaurant_App/assets/59210754/c12951c3-1b09-4073-996a-7002d433f351)
 
-![home2](https://github.com/furkanayyildiz/Ozay_Restaurant_App/assets/59210754/22f3f45a-d660-4bc8-b1ee-24d3b49229ef)
+![home2](https://github.com/furkanayyildiz/Ozay_Restaurant_App/assets/59210754/04a40827-2151-4f29-99da-6a6cd31a6e9a)
 
-![profile](https://github.com/furkanayyildiz/Ozay_Restaurant_App/assets/59210754/1861369e-0733-479c-a7ca-a23cfc3b921d)
+![profile](https://github.com/furkanayyildiz/Ozay_Restaurant_App/assets/59210754/7ea2c714-608d-4824-88f9-4300936437bb)
 
-![camera_permission](https://github.com/furkanayyildiz/Ozay_Restaurant_App/assets/59210754/1f04b480-feef-47f1-8b90-f27c5e09a54f)
+![camera_permission](https://github.com/furkanayyildiz/Ozay_Restaurant_App/assets/59210754/a0cf99eb-1791-400d-9eb3-08d4a3c29c53)
 
 ![4](https://github.com/furkanayyildiz/Calculator/assets/59210754/ff9f5f50-d2cd-45e5-8d18-51a9f1118f1b)
 
 ![5](https://github.com/furkanayyildiz/Calculator/assets/59210754/9b378d77-182d-490f-aa9c-065074bb3a5f)
 
 ![6](https://github.com/furkanayyildiz/Calculator/assets/59210754/b5629e3b-4883-4472-89cb-9d50c02c3b35)
+
+![profile2](https://github.com/furkanayyildiz/Ozay_Restaurant_App/assets/59210754/c7d0cee1-cb62-47a7-979f-473f84dbb929)
 
 
 
