@@ -1,15 +1,23 @@
+import 'dart:io';
+
+import 'package:camera/camera.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import '../auth.dart';
+import '../../data/datasources/auth.dart';
 import 'home_screen.dart';
 
 class ResultScreen extends StatefulWidget {
   final String text;
   final int point;
-  ResultScreen({Key? key, required this.text, required this.point})
+  final XFile image;
+  ResultScreen(
+      {Key? key, required this.text, required this.point, required this.image})
       : super(key: key);
 
   @override
@@ -30,11 +38,15 @@ class _ResultScreenState extends State<ResultScreen> {
   void aramaYap() {
     var user = Auth().currentUser;
     for (String word in searchedTexts) {
+      String now = DateFormat("yyyy-MM-dd hh:mm:ss").format(DateTime.now());
       if (mainText.contains(word)) {
+        final path = '${user!.uid}-$now';
         FirebaseFirestore.instance
             .collection('Users')
-            .doc(user!.uid)
+            .doc(user.uid)
             .update({'point': widget.point + 10});
+        final ref = FirebaseStorage.instance.ref().child("${user!.uid}-$now");
+        ref.putFile(File(widget.image.path));
         setState(() {
           resultText = "aranan kelimeler var";
           isFinded = true;

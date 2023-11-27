@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_text_recognition/core/product/product_model.dart';
+import 'package:flutter_text_recognition/core/constants/product_model.dart';
 
 final List<ProductModel> productData = [
   ProductModel(

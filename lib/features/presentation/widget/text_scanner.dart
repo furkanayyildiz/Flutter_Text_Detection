@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_text_recognition/screen/result_screen.dart';
+import 'package:flutter_text_recognition/features/presentation/screen/result_screen.dart';
 import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -169,8 +169,10 @@ class _TextScannerState extends State<TextScanner> with WidgetsBindingObserver {
       final recognizerText = await textRecognizer.processImage(inputImage);
       await navigator.push(
         MaterialPageRoute(
-          builder: (context) =>
-              ResultScreen(text: recognizerText.text, point: widget.point),
+          builder: (context) => ResultScreen(
+              text: recognizerText.text,
+              point: widget.point,
+              image: pictureFile),
         ),
       );
     } catch (e) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_text_recognition/auth.dart';
-import 'package:flutter_text_recognition/screen/home_screen.dart';
-import 'package:flutter_text_recognition/screen/login_screen.dart';
+import 'package:flutter_text_recognition/features/data/datasources/auth.dart';
+import 'package:flutter_text_recognition/features/presentation/screen/home_screen.dart';
+import 'package:flutter_text_recognition/features/presentation/screen/login_screen.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
